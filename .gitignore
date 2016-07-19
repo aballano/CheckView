@@ -1,0 +1,18 @@
+# Gradle junk
+**/build
+.gradle
+/local.properties
+dump.txt
+
+# IDEA/Android Studio ignores
+*.iml
+*.ipr
+*.iws
+/.idea
+*/.idea
+.navigation
+captures
+
+# Mac OS junk
+.DS_Store
+
