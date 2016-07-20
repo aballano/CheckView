@@ -100,12 +100,12 @@ public class CheckView extends View {
         arr.recycle();
 
         TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.CheckView, 0, 0);
-        color = a.getColor(R.styleable.CheckView_lineColor, DEFAULT_COLOR);
-        strokeWidth = a.getDimension(R.styleable.CheckView_strokeWidth, -1);
+        color = a.getColor(R.styleable.CheckView_cvlineColor, DEFAULT_COLOR);
+        strokeWidth = a.getDimension(R.styleable.CheckView_cvstrokeWidth, -1);
         if (strokeWidth == -1) {
             strokeWidth = applyDimension(COMPLEX_UNIT_DIP, DEFAULT_STROKE_WIDTH_DP, getResources().getDisplayMetrics());
         }
-        autoToggleEnabled = a.getBoolean(R.styleable.CheckView_autoToggle, true);
+        autoToggleEnabled = a.getBoolean(R.styleable.CheckView_cvautoToggle, true);
 
         super.setOnClickListener(onClickListenerDelegate);
         a.recycle();

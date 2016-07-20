@@ -10,7 +10,7 @@ Add a CheckView to your layout
         android:id="@+id/checkView"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        app:lineColor="#ff00" />
+        app:cvlineColor="#ff00" />
 ```
 
 // Note that you can define the color with `lineColor`
@@ -24,7 +24,7 @@ Toggle is done **automatically by default**, if you want to change that, just:
 or by xml:
 
 ```xml
-    app:autoToggle="false"
+    app:cvautoToggle="false"
 ```
 
 You can also set a state directly:
@@ -54,7 +54,7 @@ Optionally supply an animation duration in milliseconds:
 Or pass a custom stroke width:
 
 ```xml
-    app:strokeWidth="8dp"
+    app:cvstrokeWidth="8dp"
 ```
 
 ## Download

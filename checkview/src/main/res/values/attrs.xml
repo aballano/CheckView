@@ -2,9 +2,9 @@
 <resources>
 
     <declare-styleable name="CheckView">
-        <attr name="lineColor" format="color"/>
-        <attr name="autoToggle" format="boolean"/>
-        <attr name="strokeWidth" format="dimension"/>
+        <attr name="cvlineColor" format="color"/>
+        <attr name="cvautoToggle" format="boolean"/>
+        <attr name="cvstrokeWidth" format="dimension"/>
     </declare-styleable>
 
 </resources>
