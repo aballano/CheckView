@@ -1,6 +1,4 @@
-# Check View
-
-[![Release]()]()
+# Check View [![](https://jitpack.io/v/Shyish/CheckView.svg)](https://jitpack.io/#Shyish/CheckView)
 
 ![Sample](https://github.com/Shyish/CheckView/blob/master/gifs/checkview.gif?raw=true)
 
@@ -26,7 +24,7 @@ Toggle is done **automatically by default**, if you want to change that, just:
 or by xml:
 
 ```xml
-    app:autoToggle="false" />
+    app:autoToggle="false"
 ```
 
 You can also set a state directly:
@@ -37,7 +35,9 @@ You can also set a state directly:
     checkView.check();
 ```
 
-Optionally supply an animation duration in milliseconds
+## Extra
+
+Optionally supply an animation duration in milliseconds:
 
 ```java
     checkView.check(0l);
@@ -51,6 +51,12 @@ Optionally supply an animation duration in milliseconds
     checkView.plus(200l);
 ```
 
+Or pass a custom stroke width:
+
+```xml
+    app:strokeWidth="8dp"
+```
+
 ## Download
 
 Easy as:
@@ -61,7 +67,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.Shyish:checkview:v1.0.0'
+    compile 'com.github.Shyish:CheckView:1.0.0'
 }
 ```
 
