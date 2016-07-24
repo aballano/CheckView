@@ -29,12 +29,34 @@
         tools:context="com.zdvdev.sample.MainActivity">
 
         <com.zdvdev.checkview.CheckView
-            android:id="@+id/checkView"
+            android:id="@+id/checkView1"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_centerInParent="true"
             android:background="@android:color/holo_blue_bright"
             app:cvlineColor="#ff00" />
+
+        <com.zdvdev.checkview.CheckView
+            android:id="@+id/checkView2"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerInParent="true"
+            android:padding="16dp"
+            android:background="@android:color/holo_blue_bright"
+            android:layout_below="@+id/checkView1"
+            app:cvlineColor="#ff00"
+            android:layout_marginTop="16dp"/>
+
+        <com.zdvdev.checkview.CheckView
+            android:id="@+id/checkView3"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerInParent="true"
+            android:background="@android:color/holo_blue_bright"
+            android:layout_below="@+id/checkView2"
+            android:padding="4dp"
+            app:cvlineColor="#ff00"
+            android:layout_marginTop="16dp" />
 
     </RelativeLayout>
 

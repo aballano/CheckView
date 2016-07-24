@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         rootView = findViewById(R.id.activity_main);
 
-        findViewById(R.id.checkView).setOnClickListener(new OnClickListener() {
+        findViewById(R.id.checkView1).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 Snackbar.make(rootView, "Button clicked", Snackbar.LENGTH_SHORT).show();

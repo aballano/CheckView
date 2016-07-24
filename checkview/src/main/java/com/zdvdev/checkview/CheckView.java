@@ -69,6 +69,7 @@ public class CheckView extends View {
     private boolean paddingDefined;
     OnClickListener onClickListener;
     boolean autoToggleEnabled;
+    int padding;
 
     public CheckView(Context context) {
         super(context);
@@ -132,6 +133,8 @@ public class CheckView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
+        canvas.translate(padding, padding);
+
         //TODO this could be moved as a class attribute
         float percentFromState = state == FLAG_STATE_PLUS ? percent : 1 - percent;
 
@@ -144,6 +147,8 @@ public class CheckView extends View {
         setPointFromPercent(fourPath, fourPathLength, percentFromState, toXY);
 
         canvas.drawLine(fromXY[0], fromXY[1], toXY[0], toXY[1], paint);
+
+        canvas.restore();
     }
 
     /**
@@ -176,9 +181,6 @@ public class CheckView extends View {
         measurePaths();
     }
 
-    int maxSize;
-    int padding;
-    float middle;
 
     /**
      * Perform measurements and pre-calculations. This should be called any time
@@ -186,16 +188,20 @@ public class CheckView extends View {
      * or an operating system callback like {@link #onLayout(boolean, int, int, int, int)}.
      */
     private void measurePaths() {
+        int maxSize;
+        float middle;
+
         maxSize = Math.min(getWidth(), getHeight());
         padding = Math.max(
               Math.max(getPaddingBottom(), getPaddingTop()),
               Math.max(getPaddingRight(), getPaddingLeft()));
+        maxSize -= padding * 2;
         middle = maxSize / 2f;
 
         pathMeasure = new PathMeasure();
 
-        PointF p1a = new PointF(adjustWithPadding(middle), adjustWithPadding(0));
-        PointF p1b = getCheckRightPoint(maxSize, padding);
+        PointF p1a = new PointF(middle, 0);
+        PointF p1b = getCheckRightPoint(maxSize);
 
         firstPath = new Path();
         firstPath.moveTo(p1a.x, p1a.y);
@@ -203,8 +209,8 @@ public class CheckView extends View {
         pathMeasure.setPath(firstPath, false);
         firstPathLength = pathMeasure.getLength();
 
-        PointF p2a = new PointF(adjustWithPadding(middle), adjustWithPadding(maxSize));
-        PointF p2b = getCheckMiddlePoint();
+        PointF p2a = new PointF(middle, maxSize);
+        PointF p2b = getCheckMiddlePoint(maxSize);
 
         secondPath = new Path();
         secondPath.moveTo(p2a.x, p2a.y);
@@ -212,8 +218,8 @@ public class CheckView extends View {
         pathMeasure.setPath(secondPath, false);
         secondPathLength = pathMeasure.getLength();
 
-        PointF p3a = new PointF(adjustWithPadding(0), adjustWithPadding(middle));
-        PointF p3b = getCheckLeftPoint();
+        PointF p3a = new PointF(0, middle);
+        PointF p3b = getCheckLeftPoint(maxSize);
 
         thirdPath = new Path();
         thirdPath.moveTo(p3a.x, p3a.y);
@@ -221,7 +227,7 @@ public class CheckView extends View {
         pathMeasure.setPath(thirdPath, false);
         thirdPathLength = pathMeasure.getLength();
 
-        PointF p4a = new PointF(adjustWithPadding(maxSize), adjustWithPadding(middle));
+        PointF p4a = new PointF(maxSize, middle);
 
         fourPath = new Path();
         fourPath.moveTo(p4a.x, p4a.y);
@@ -240,26 +246,16 @@ public class CheckView extends View {
         toXY = new float[]{0f, 0f};
     }
 
-    private PointF getCheckLeftPoint() {
-        return new PointF(adjustWithPadding(1), adjustWithPadding(middle));
+    private PointF getCheckLeftPoint(int maxSize) {
+        return new PointF(1, maxSize / 2);
     }
 
-    private PointF getCheckMiddlePoint() {
-        return new PointF((5 * maxSize / 16f) + padding / 2f, (13 * maxSize / 16f) - padding / 2f);
+    private PointF getCheckMiddlePoint(int maxSize) {
+        return new PointF(5 * maxSize /  16f, 13 * maxSize / 16f);
     }
 
-    private PointF getCheckRightPoint(int maxSize, int padding) {
-        return new PointF(adjustWithPadding(maxSize), (maxSize / 8f) + padding / 2f);
-    }
-
-    private float adjustWithPadding(float value) {
-        float adjustedValue = value;
-        if (value < middle) {
-            adjustedValue += padding;
-        } else if (value > middle) {
-            adjustedValue -= padding;
-        }
-        return adjustedValue;
+    private PointF getCheckRightPoint(int maxSize) {
+        return new PointF(maxSize, maxSize / 8f);
     }
 
     public void setColor(int argb) {
