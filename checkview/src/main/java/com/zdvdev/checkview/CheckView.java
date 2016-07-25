@@ -133,6 +133,7 @@ public class CheckView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
+        canvas.save();
         canvas.translate(padding, padding);
 
         //TODO this could be moved as a class attribute
