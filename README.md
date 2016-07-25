@@ -67,7 +67,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.Shyish:CheckView:1.0.0'
+    compile 'com.github.Shyish:CheckView:1.X.X'
 }
 ```
 
