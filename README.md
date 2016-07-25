@@ -18,7 +18,7 @@ Add a CheckView to your layout
 Toggle is done **automatically by default**, if you want to change that, just:
 
 ```java
-    checkView.setAutoToggle(true);
+    checkView.setAutoToggle(false);
 ```
 
 or by xml:
@@ -40,15 +40,15 @@ You can also set a state directly:
 Optionally supply an animation duration in milliseconds:
 
 ```java
-    checkView.check(0l);
+    checkView.check(0L);
 ```
 
 ```java
-    checkView.toggle(150l);
+    checkView.toggle(150L);
 ```
 
 ```java
-    checkView.plus(200l);
+    checkView.plus(200L);
 ```
 
 Or pass a custom stroke width:
