@@ -1,4 +1,4 @@
-# Check View [![](https://jitpack.io/v/Shyish/CheckView.svg)](https://jitpack.io/#Shyish/CheckView)
+# Check View [![](https://jitpack.io/v/Shyish/CheckView.svg)](https://jitpack.io/#Shyish/CheckView) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-CheckView-green.svg?style=true)](https://android-arsenal.com/details/1/3968)
 
 ![Sample](https://github.com/Shyish/CheckView/blob/master/gifs/checkview.gif?raw=true)
 
