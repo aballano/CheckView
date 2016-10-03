@@ -1,4 +1,5 @@
-# Check View [![](https://jitpack.io/v/Shyish/CheckView.svg)](https://jitpack.io/#Shyish/CheckView) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-CheckView-green.svg?style=true)](https://android-arsenal.com/details/1/3968)
+# Check View [![](https://jitpack.io/v/Shyish/CheckView.svg)](https://jitpack.io/#Shyish/CheckView) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-CheckView-green.svg?style=true)](https://android-arsenal.com/details/1/3968) <a href="http://www.methodscount.com/?lib=com.github.Shyish%3ACheckView%3A%2B"><img src="https://img.shields.io/badge/Methods and size-102 | 10 KB-e91e63.svg"/></a>
+
 
 ![Sample](https://github.com/Shyish/CheckView/blob/master/gifs/checkview.gif?raw=true)
 
